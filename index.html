@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+    <link rel="stylesheet" href="default.css">
+    <script src="script.js" defer></script> <!-- Link the JavaScript file -->
+</head>
+<body class="bg-blue-400 text-white">
+    <div class="m-10 flex flex-col gap-4">
+        <div class="title text-center">
+           <h1 class="text-5xl font-bold">Bé tập tính</h1>
+        </div>
+        <form class="grid grid-cols-4 items-center gap-2">
+            <label class="first-label ml-28 text-xl">Số thứ nhất</label>
+            <input 
+                id="first-field" class="rounded border-2 border-black w-full text-black"
+                onchange="checkFirst()"
+                >
+            <div class="ml-10 text-xl">
+                <input type="radio" id="add" name="operation" value='+'>
+                <label>Cộng</label>
+            </div>
+            <div class="text-xl">
+                <input type="radio" id="sub" name="operation" value='-'>
+                <label>Trừ</label>
+            </div>
+            <label class="second-label ml-28 text-xl">Số thứ hai</label>
+            <input 
+                id="second-field" class="rounded border-2 border-black w-full text-black"
+                onchange="checkSecond()"
+                >
+            <div class="ml-10 text-xl">
+                <input type="radio" id="mul" name="operation" value='*'>
+                <label>Nhân</label>
+            </div>
+            <div class="text-xl">
+                <input type="radio" id="div" name="operation" value='/' onchange="checkSecond()">
+                <label>Chia</label>
+            </div>
+            <label class="ml-28 text-xl">Kết quả</label>
+            <p id="result" class="w-full bg-white border-2 border-black text-black">Result</p>
+            <button 
+                type="button"
+                class="calculate w-1/2 bg-white rounded border-gray-600 border-2 text-black"
+                onclick="calculate()"
+                >
+                Tính
+            </button>
+            <label class="row-start-4 ml-28 text-xl text-red-600 font-bold">Thông báo:</label>
+            <p id="notification" class="row-start-4 text-xl text-red-600 font-bold"></p>
+        </form>
+    </div>
+</body>
+</html>
